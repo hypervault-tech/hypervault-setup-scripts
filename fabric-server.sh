@@ -29,11 +29,6 @@ echo "Need to log our and log in again to take effect"
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-bash
-nvm install 8.9.4 
-
-# Install pm2
-npm i -g pm2 composer-cli composer-playground 
 
 # Install Python 2
 sudo apt-get install -y -qq python 
