@@ -2,12 +2,12 @@
 set -e
 
 # Install build essentials
-sudo apt update 
-sudo apt-get install -y build-essential 
+sudo apt-get update -qq > /dev/null
+sudo apt-get install -y -qq build-essential 
 
 # Install zsh
-sudo apt install -y zsh 
-sudo apt install -y powerline fonts-powerline 
+sudo apt-get install -y -qq zsh > /dev/null
+sudo apt-get install -y -qq powerline fonts-powerline > /dev/null
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 # sudo chsh -s /bin/zsh
@@ -16,14 +16,14 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 # install docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
-sudo apt install -y docker-compose 
+sudo apt-get install -y -qq docker-compose > /dev/null
 
 sudo usermod -a -G docker $USER
 echo "Need to log our and log in again to take effect"
 
 # Install Node v8
 # curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
-# sudo apt install -y nodejs
+# sudo apt-get install -y -qq nodejs> /dev/null
 
 # Install NVM
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
@@ -36,11 +36,11 @@ nvm install 8.9.4
 npm i -g pm2 composer-cli composer-playground 
 
 # Install Python 2
-sudo apt-get install -y python 
+sudo apt-get install -y -qq python 
 pip install glances 
 
 # Install nginx
-sudo apt install -y nginx 
+sudo apt-get install -y -qq nginx > /dev/null
 
 # Github credentials caching for approx 1 year
 git config --global credential.helper cache
