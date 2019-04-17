@@ -6,6 +6,8 @@ git clone https://github.com/lixiii/hypervault-server-credentials.git ~/credenti
 sudo hostnamectl set-hostname fabric-endpoint
 
 # use node 8.9.4 and install composer dependencies
+export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm and makes it available
 nvm install 8.9.4 
 npm i -g pm2 composer-cli composer-playground 
 
