@@ -61,5 +61,6 @@ echo "$ALIASES"
 echo "$ALIASES" > ~/.bash_aliases
 
 # Finally prompt user to log out and log in again to run hypervault.sh
+wget -O hypervault.sh https://raw.githubusercontent.com/lixiii/hypervault-setup-scripts/master/hypervault.sh
 echo "Logging you out. Please login again to run hypervault.sh"
 exit
