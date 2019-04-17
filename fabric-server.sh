@@ -23,7 +23,7 @@ sudo apt-get install -y python
 pip install glances
 
 # Install nginx
-sudo apt install nginx
+sudo apt install -y nginx
 
 # Github credentials caching for approx 1 year
 git config --global credential.helper cache
