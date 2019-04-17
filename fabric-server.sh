@@ -2,13 +2,13 @@
 set -e
 
 # Install build essentials
-sudo apt update > dev/null
-sudo apt-get install -y build-essential > dev/null
+sudo apt update > /dev/null
+sudo apt-get install -y build-essential > /dev/null
 
 # Install zsh
-sudo apt install -y zsh > dev/null
-sudo apt-get install -y powerline fonts-powerline > dev/null
-git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh > dev/null
+sudo apt install -y zsh > /dev/null
+sudo apt-get install -y powerline fonts-powerline > /dev/null
+git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh > /dev/null
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 # sudo chsh -s /bin/zsh
 
@@ -16,7 +16,7 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 # install docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
-sudo apt install -y docker-compose > dev/null
+sudo apt install -y docker-compose > /dev/null
 
 sudo usermod -a -G docker $USER
 echo "Need to log our and log in again to take effect"
@@ -30,17 +30,17 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | b
 export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 bash
-nvm install 8.9.4 > dev/null
+nvm install 8.9.4 > /dev/null
 
 # Install pm2
-npm i -g pm2 composer-cli composer-playground > dev/null
+npm i -g pm2 composer-cli composer-playground > /dev/null
 
 # Install Python 2
-sudo apt-get install -y python > dev/null
-pip install glances > dev/null
+sudo apt-get install -y python > /dev/null
+pip install glances > /dev/null
 
 # Install nginx
-sudo apt install -y nginx > dev/null
+sudo apt install -y nginx > /dev/null
 
 # Github credentials caching for approx 1 year
 git config --global credential.helper cache
