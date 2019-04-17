@@ -8,7 +8,7 @@ sudo apt install zsh
 sudo apt-get install powerline fonts-powerline
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-sudo chsh -s /bin/zsh
+# sudo chsh -s /bin/zsh
 
 
 # install docker
