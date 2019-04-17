@@ -12,8 +12,15 @@ sudo usermod -a -G docker $USER
 echo "Need to log our and log in again to take effect"
 
 # Install Node v8
-curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
-sudo apt install -y nodejs
+# curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
+# sudo apt install -y nodejs
+
+# Install NVM
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+bash
+nvm install 8.9.4
 
 # Install pm2
 npm i -g pm2 composer-cli composer-playground
