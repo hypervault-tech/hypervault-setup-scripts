@@ -4,8 +4,8 @@ sudo apt update
 sudo apt-get install -y build-essential
 
 # Install zsh
-sudo apt install zsh
-sudo apt-get install powerline fonts-powerline
+sudo apt install -y zsh
+sudo apt-get install -y powerline fonts-powerline
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 # sudo chsh -s /bin/zsh
@@ -14,7 +14,7 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 # install docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
-sudo apt -y install docker-compose
+sudo apt install -y docker-compose
 
 sudo usermod -a -G docker $USER
 echo "Need to log our and log in again to take effect"
@@ -44,6 +44,20 @@ sudo apt install -y nginx
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=31000000'
 
+# Setup aliases
+ALIASES='
+# Prints docker containers in paged mode
+alias dps="docker ps | less -S"
+alias tls="tmux list-session"
+alias tks="tmux kill-session -t "
+alias tns="tmux new -s "
+alias tat="tmux attach -t"
+'
+
+echo "Setting up the following aliases"
+echo "$ALIASES"
+echo "$ALIASES" > ~/.bash_aliases
+
 # Finally clone the hypervault repo
 git clone https://github.com/lixiii/hypervault
 cd hypervault 
@@ -60,17 +74,3 @@ cd ../../
 source rebuild.sh
 cd ../../
 source restart.sh
-
-# Setup aliases
-ALIASES='
-# Prints docker containers in paged mode
-alias dps="docker ps | less -S"
-alias tls="tmux list-session"
-alias tks="tmux kill-session -t "
-alias tns="tmux new -s "
-alias tat="tmux attach -t"
-'
-
-echo "Setting up the following aliases"
-echo "$ALIASES"
-echo "$ALIASES" > ~/.bash_aliases
