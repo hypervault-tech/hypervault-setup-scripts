@@ -32,6 +32,7 @@ export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
 
 # Install Python 2
 sudo apt-get install -y -qq python 
+sudo apt-get install -y -qq python-pip
 pip install glances 
 
 # Install nginx
