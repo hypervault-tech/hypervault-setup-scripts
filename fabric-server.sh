@@ -16,7 +16,7 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
 sudo apt install -y nodejs
 
 # Install pm2
-npm i -g pm2
+npm i -g pm2 composer-cli composer-playground
 
 # Install Python 2
 sudo apt-get install -y python
@@ -43,5 +43,6 @@ cd composer-rest-server/docker/
 source build.sh
 cd ../../
 source rebuild.sh
+cd ../../
 source restart.sh
 
