@@ -60,19 +60,6 @@ echo "Setting up the following aliases"
 echo "$ALIASES"
 echo "$ALIASES" > ~/.bash_aliases
 
-# Finally clone the hypervault repo
-git clone https://github.com/lixiii/hypervault
-cd hypervault 
-git submodule init
-git submodule update
-git submodule sync
-cd hypervault-rest-server
-git submodule init
-git submodule update
-git submodule sync 
-cd composer-rest-server/docker/
-source build.sh
-cd ../../
-source rebuild.sh
-cd ../../
-source restart.sh
+# Finally prompt user to log out and log in again to run hypervault.sh
+echo "Logging you out. Please login again to run hypervault.sh"
+exit
